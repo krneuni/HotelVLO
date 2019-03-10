@@ -1,0 +1,51 @@
+﻿@model IEnumerable<VLO.Models.TurnoEmpleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Turnos por empleado</h2>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Nombre Empleado
+            </th>
+            <th>
+                Turno
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Hora
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreEmpleado)
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraInicial) -
+                    @Html.DisplayFor(modelItem => item.HoraFinal)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", "AsignacionTurnos", new { id = item.IdTurno }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" }) |
+                    @Html.ActionLink(" ", "Delete","AsignacionTurnos", new { id = item.IdTurno }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

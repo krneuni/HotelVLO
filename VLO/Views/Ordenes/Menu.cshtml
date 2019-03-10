@@ -1,0 +1,130 @@
+﻿@model VLO.Models.OrdenesViewModel
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2>Orden Mesa @ViewBag.mesa</h2>
+
+<div class="col-md-12">
+    <div class="col-md-6">
+        <form action="/Ordenes/AddOrden" method="post">
+            <div class="form-group">
+                <label>Cliente</label>
+                <input type="text" name="cliente" value="" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <label>Cantidad de Personas</label>
+                <input type="number" class="form-control"  min="1" max="10" name="numpersonas" value="1"  required/>
+            </div>
+            <input type="hidden" name="mesa" value="@ViewBag.mesa" />
+            <table class="table table-bordered" style="background-color:#FFF">
+                <thead>
+                    <tr>
+                        <td>N°</td>
+                        <td>Producto</td>
+                        <td>Cantidad</td>
+                        <td>Precio</td>
+                        <td>Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody id="detalle"></tbody>
+            </table>
+
+            <button type="submit" class="btn btn-green">Ordenar</button>
+
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h3 style="font-weight:bold">Menus</h3>
+        <label class="btn btn-default" onclick="Filter('.all')">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked=""> All
+        </label>
+        @foreach (var item in Model.TiposMenu)
+        {
+            <label class="btn btn-default" onclick="Filter('.tipo_@item.IdTipoMenu')">
+                <input type="radio" name="options" id="option1" autocomplete="off" checked=""> @item.Nombre
+            </label>
+        }
+            <div class="col-md-12" style="margin-top:10px;height:450px;overflow:auto">
+        @foreach (var item in Model.Menus)
+        {
+            <div class="col-md-6 all tipo_@item.IdTipoMenu">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>@item.Nombre</h3>
+                        <h4>@item.Precio.ToString("C")</h4>
+                        <p>
+                            <a data-toggle="modal" data-target="#modal_@item.IdMenu" class="btn btn-green">Ordenar</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal_@item.IdMenu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Descripcion del Menu</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h1>@item.Nombre</h1>
+                            <h2>@item.Precio.ToString("C")</h2>
+                            <label>Cantidad:</label>
+                            <input type="number" id="cantidad__@item.IdMenu" min="1" max="99" name="cantidad" value="1" required class="form-control" />
+                        <p>
+                            @item.Descripcion
+                        </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" onclick="addOrden(@item.IdMenu, '@item.Nombre','cantidad__@item.IdMenu' , @item.Precio)" class="btn btn-green">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            }
+            </div>
+    </div>
+</div>
+
+<script>
+    function Filter(text) {
+        if (text == ".all") {
+            $(".all").show()
+            return;
+        }
+        $(".all").hide()
+        $(text).show();
+    }
+
+    function addOrden(id, producto, cantidad, precio) {
+        try {
+            var ccantidad = parseFloat($("#" + cantidad).val());
+            var detalle = `
+            <tr id="tr`+ id + `">
+                <td>`+ id + `
+                    <input type="hidden" value='`+ id +`' name="id[]">
+                    <input type="hidden" value='`+ ccantidad +`' name="cantidad[]">
+                </td>
+                <td>`+ producto + `</td>
+                <td>`+ ccantidad + `</td>
+                <td> $`+ precio + `</td>
+                <td>$`+ (ccantidad * precio) + `</td>
+                <td></td>
+            </tr>
+        `;
+
+            $("#tr" + id).remove();
+
+            $("#detalle").append(detalle);
+        }
+        catch (ex) {
+            alert(ex);
+        }
+
+    }
+</script>

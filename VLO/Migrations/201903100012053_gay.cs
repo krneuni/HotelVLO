@@ -1,0 +1,18 @@
+namespace VLO.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class gay : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.DetallePedidoes", "cantidad", c => c.Int(nullable: false));
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.DetallePedidoes", "cantidad");
+        }
+    }
+}
