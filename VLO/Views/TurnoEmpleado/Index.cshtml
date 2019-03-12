@@ -5,9 +5,12 @@
 }
 
 <h2>Turnos por empleado</h2>
-<div class="table-responsive">
-    <table class="table table-bordered">
-        <tr>
+<p>
+    <a href="@Url.Action("Create","AsignacionTurnos")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
+</p>
+<div class="row col-md-12 table-responsive" style="margin-top:10px">
+    <table class="table table-bordered" style="background-color:#FFF">
+        <tr style="background-color:#E6E6E6">
             <th>
                 Nombre Empleado
             </th>
@@ -42,7 +45,7 @@
                 </td>
                 <td>
                     @Html.ActionLink(" ", "Edit", "AsignacionTurnos", new { id = item.IdTurno }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" }) |
-                    @Html.ActionLink(" ", "Delete","AsignacionTurnos", new { id = item.IdTurno }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+                    @Html.ActionLink(" ", "Delete", "AsignacionTurnos", new { id = item.IdTurno }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
                 </td>
             </tr>
         }

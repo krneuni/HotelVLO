@@ -21,6 +21,14 @@ namespace VLO.Controllers
             return View(receta.ToList());
         }
 
+        [HttpPost]
+        public ActionResult Index(string txtbuscar)
+        {
+            var listar = db.Receta;
+            var query = (from p in listar where p.Menu.Nombre.Contains(txtbuscar) select p);
+            return View(query.ToList());
+        }
+
         // GET: Recetas/Details/5
         public ActionResult Details(int? id)
         {

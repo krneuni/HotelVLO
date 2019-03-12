@@ -7,11 +7,11 @@
 <h2>Pedidos</h2>
 
 <p>
-    @Html.ActionLink(" Nuevo", "Create", null, new { @class = "btn btn-success glyphicon glyphicon-plus" })
+    <a href="@Url.Action("Create","Pedidos")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
 </p>
-<div class="table-responsive">
-    <table class="table table-bordered">
-        <tr>
+<div class="row col-md-12 table-responsive" style="margin-top:10px">
+    <table class="table table-bordered" style="background-color:#FFF">
+        <tr style="background-color:#E6E6E6">
             <th>
                 @Html.DisplayNameFor(model => model.Empleado.Nombre)
             </th>
@@ -50,4 +50,4 @@
         }
 
     </table>
-    </div>
+</div>

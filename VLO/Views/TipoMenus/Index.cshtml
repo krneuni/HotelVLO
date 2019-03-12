@@ -6,11 +6,11 @@
 
 <h2>Tipo de menus</h2>
 <p>
-    @Html.ActionLink(" Nuevo", "Create", null, new { @class = "btn btn-success glyphicon glyphicon-plus" })
+    <a href="@Url.Action("Create","TipoMenus")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
 </p>
-<div class="table-responsive">
-    <table class="table table-bordered">
-        <tr>
+<div class="row col-md-12 table-responsive" style="margin-top:10px">
+    <table class="table table-bordered" style="background-color:#FFF">
+        <tr style="background-color:#E6E6E6">
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
@@ -24,7 +24,7 @@
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
                 <td>
-                    @*@Html.ActionLink(" ", "Edit", new { id = item.IdTipoMenu }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" })*@
+                    @Html.ActionLink(" ", "Edit", new { id = item.IdTipoMenu }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" })
                     @Html.ActionLink(" ", "Delete", new { id = item.IdTipoMenu }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
                 </td>
             </tr>

@@ -9,12 +9,9 @@
 <p>
     <a href="@Url.Action("Create","Categorias")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
 </p>
-
-<br />
-<br />
-<div class="row col-md-12" style="margin-top:10px">
+<div class="row col-md-12 table-responsive" style="margin-top:10px">
     <table class="table table-bordered" style="background-color:#FFF">
-        <tr>
+        <tr   style="background-color:#E6E6E6">
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
@@ -28,7 +25,7 @@
                     @Html.DisplayFor(modelItem => item.Nombre)
                 </td>
                 <td>
-                    @Html.ActionLink(" ", "Delete", new { id = item.IdCategoria }, new { @class = "btn btn-danger glyphicon glyphicon-refresh" })
+                    @Html.ActionLink(" ", "Edit", new { id = item.IdCategoria }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" })
                     @Html.ActionLink(" ", "Delete", new { id = item.IdCategoria }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
                 </td>
             </tr>

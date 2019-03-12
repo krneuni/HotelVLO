@@ -9,12 +9,20 @@
 <p>
     <a href="@Url.Action("Create","DetalleCompras")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
 </p>
-
-<br />
-<br />
-<div class="row col-md-12" style="margin-top:10px">
+@*<form action="@Url.Action("Index","DetalleCompras")" method="post">
+    <div class="form-check form-check-inline">
+        <label class="text">Buscar por:</label>
+        <input class="form-check-input" type="radio" name="rd" id="1" value="1">
+        <label class="form-check-label" for="Radio1">Producto</label>
+        <input class="form-check-input" type="radio" name="rd" id="2" value="2">
+        <label class="form-check-label" for="Radio2">Proveedor</label>
+        <input class="form-check-input" type="radio" name="rd" id="3" value="3">
+        <label class="form-check-label" for="Radio2">Fecha</label>
+    </div>
+</form>*@
+<div class="row col-md-12 table-responsive" style="margin-top:10px">
     <table class="table table-bordered" style="background-color:#FFF">
-        <tr>
+        <tr  style="background-color:#E6E6E6">
             <th>
                 @Html.DisplayNameFor(model => model.Productos.Nombre)
             </th>

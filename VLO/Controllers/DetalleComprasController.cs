@@ -21,6 +21,31 @@ namespace VLO.Controllers
             return View(detalleCompra.ToList());
         }
 
+        //[HttpPost]
+        //public ActionResult Index(string rd)
+        //{
+            
+        //    if (rd == "1")
+        //    {
+        //        var query = from Prod in db.DetalleCompra where Prod.IdProducto select Prod;
+        //    }
+        //    if (rd == "2")
+        //    {
+        //        query = (from nomb in c.Lista() where nomb.Nombre.Contains(txtbuscar) select nomb);
+        //    }
+        //    if (rd == "3")
+        //    {
+        //        query = (from mater in c.Lista() where mater.Materia.Contains(txtbuscar) select mater);
+        //    }
+        //    if (rd == "4")
+        //    {
+        //        double prom = Convert.ToDouble(txtbuscar);
+        //        query = (from proMedio in c.Lista() where proMedio.Promedio == prom select proMedio);
+
+        //    }
+        //    return View(query.ToList());
+        //}
+
         // GET: DetalleCompras/Details/5
         public ActionResult Details(int? id)
         {

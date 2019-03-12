@@ -9,11 +9,23 @@
 <p>
     <a href="@Url.Action("Create","Menus")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
 </p>
+<form action="@Url.Action("Index","Menus")" method="post">
+    <div class="form-group">
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <input type="text" name="txtbuscar" value="" class="form-control" placeholder=" Digite nombre" autocomplete="off" />
+            </div>
+            <div class="col-md-6">
+                <input type="submit" class="btn btn-info" name="btn" value="BUSCAR" />
+            </div>
+        </div>
+    </div>
+</form>
 <br />
 <br />
-<div class="row col-md-12" style="margin-top:10px">
+<div class="row col-md-12 table-responsive" style="margin-top:10px">
     <table class="table table-bordered" style="background-color:#FFF">
-        <tr>
+        <tr style="background-color:#E6E6E6">
             <th>
                 @Html.DisplayNameFor(model => model.TipoMenu.Nombre)
             </th>

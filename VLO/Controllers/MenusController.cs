@@ -20,6 +20,14 @@ namespace VLO.Controllers
             var menus = db.Menus.Include(m => m.TipoMenu);
             return View(menus.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(string txtbuscar)
+        {
+            var listar = db.Menus;
+            var query = (from p in listar where p.Nombre.Contains(txtbuscar) select p);
+            return View(query.ToList());
+        }
+
 
         // GET: Menus/Details/5
         public ActionResult Details(int? id)

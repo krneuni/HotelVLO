@@ -7,34 +7,42 @@
 <h2>Asignación de turnos</h2>
 
 <p>
-    @Html.ActionLink(" Nuevo", "Create", null, new { @class = "btn btn-success glyphicon glyphicon-plus" })
+    <a href="@Url.Action("Create","AsignacionTurnos")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
 </p>
-<div class="table-responsive">
-    <table class="table table-bordered">
-        <tr>
+<div class="row col-md-12 table-responsive" style="margin-top:10px">
+    <table class="table table-bordered" style="background-color:#FFF">
+        <tr style="background-color:#E6E6E6">
             <th>
                 @Html.DisplayNameFor(model => model.Empleado.Nombre)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Turnos.Nombre)
             </th>
+            <th>
+                Horario
+            </th>
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Empleado.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Turnos.Nombre)
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "Edit", new { id = item.IdAsignacion }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" }) | 
-                    @Html.ActionLink(" ", "Delete", new { id = item.IdAsignacion }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+                @Html.DisplayFor(modelItem => item.Empleado.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turnos.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turnos.HoraInicial) - 
+                @Html.DisplayFor(modelItem => item.Turnos.HoraFinal)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Edit", new { id = item.IdAsignacion }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" }) |
+                @Html.ActionLink(" ", "Delete", new { id = item.IdAsignacion }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+            </td>
+        </tr>
         }
 
     </table>
