@@ -54,11 +54,29 @@ namespace VLO.Controllers
 
                 db.DetallePedido.Add(dp);
                 await db.SaveChangesAsync();
+
+                //Encontrar el menu
+                var menu = db.Menus.Find(dp.IdMenu);
+                //Buscar los menus en la receta
+                var recmenu = (from u in db.Receta where u.IdMenu == menu.IdMenu select u).ToList();
+                //Recorrer
+                foreach (var io in recmenu)
+                {
+                    //Encontrar los productos que se utilizan
+                    Productos de = db.Productos.Find(io.IdProducto);
+                    
+                    //Resta de la cantidad que se pide menos la cantidad utilizada
+
+                    var Descuento = io.CantidadUtilizada * dp.cantidad;
+                    de.Cantidad =de.Cantidad - Descuento;
+                    db.Entry(de).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
 
-            //Encontrar los productos que se utilizan
+            //Encontrar las mesas
             Mesa d = db.Mesa.Find(aovm.mesa);
-            //Resta de la cantidad que se pide menos la cantidad utilizada
+            //Cambia el estado de la mesa
             d.Estado = false;
             db.Entry(d).State = EntityState.Modified;
             db.SaveChanges();

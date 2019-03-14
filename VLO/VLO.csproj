@@ -241,49 +241,15 @@
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\RecetasController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\TerminosCarnesController.cs" />
     <Compile Include="Controllers\TipoMenusController.cs" />
     <Compile Include="Controllers\TurnoEmpleadoController.cs" />
     <Compile Include="Controllers\TurnosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201902191348098_InitialCreate.cs" />
-    <Compile Include="Migrations\201902191348098_InitialCreate.Designer.cs">
-      <DependentUpon>201902191348098_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902191356212_Primera.cs" />
-    <Compile Include="Migrations\201902191356212_Primera.Designer.cs">
-      <DependentUpon>201902191356212_Primera.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902191446367_Segunda.cs" />
-    <Compile Include="Migrations\201902191446367_Segunda.Designer.cs">
-      <DependentUpon>201902191446367_Segunda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201902191701302_Tercera.cs" />
-    <Compile Include="Migrations\201902191701302_Tercera.Designer.cs">
-      <DependentUpon>201902191701302_Tercera.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903041519449_Turnos.cs" />
-    <Compile Include="Migrations\201903041519449_Turnos.Designer.cs">
-      <DependentUpon>201903041519449_Turnos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903051922044_Empleado.cs" />
-    <Compile Include="Migrations\201903051922044_Empleado.Designer.cs">
-      <DependentUpon>201903051922044_Empleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903100012053_gay.cs" />
-    <Compile Include="Migrations\201903100012053_gay.Designer.cs">
-      <DependentUpon>201903100012053_gay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903100037408_new.cs" />
-    <Compile Include="Migrations\201903100037408_new.Designer.cs">
-      <DependentUpon>201903100037408_new.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903100038528_EstadoPedido.cs" />
-    <Compile Include="Migrations\201903100038528_EstadoPedido.Designer.cs">
-      <DependentUpon>201903100038528_EstadoPedido.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddOrdenViewModel.cs" />
     <Compile Include="Models\AsignacionTurno.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -396,6 +362,14 @@
     <Content Include="Views\Shared\_Menu_Administrador.cshtml" />
     <Content Include="Views\Ordenes\Index.cshtml" />
     <Content Include="Views\Ordenes\Menu.cshtml" />
+    <Content Include="Views\Shared\_Menu_Cocinero.cshtml" />
+    <Content Include="Views\Shared\_Menu_Mesero.cshtml" />
+    <Content Include="Views\Shared\_Recepcion.cshtml" />
+    <Content Include="Views\TerminosCarnes\Create.cshtml" />
+    <Content Include="Views\TerminosCarnes\Delete.cshtml" />
+    <Content Include="Views\TerminosCarnes\Details.cshtml" />
+    <Content Include="Views\TerminosCarnes\Edit.cshtml" />
+    <Content Include="Views\TerminosCarnes\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -405,37 +379,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902191348098_InitialCreate.resx">
-      <DependentUpon>201902191348098_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902191356212_Primera.resx">
-      <DependentUpon>201902191356212_Primera.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902191446367_Segunda.resx">
-      <DependentUpon>201902191446367_Segunda.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201902191701302_Tercera.resx">
-      <DependentUpon>201902191701302_Tercera.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903041519449_Turnos.resx">
-      <DependentUpon>201903041519449_Turnos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903051922044_Empleado.resx">
-      <DependentUpon>201903051922044_Empleado.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903100012053_gay.resx">
-      <DependentUpon>201903100012053_gay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903100037408_new.resx">
-      <DependentUpon>201903100037408_new.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903100038528_EstadoPedido.resx">
-      <DependentUpon>201903100038528_EstadoPedido.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

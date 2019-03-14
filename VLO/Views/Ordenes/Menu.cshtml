@@ -74,15 +74,20 @@
                         <div class="modal-body">
                             <h1>@item.Nombre</h1>
                             <h2>@item.Precio.ToString("C")</h2>
+                            <p>
+                                @item.Descripcion
+                            </p>
                             <label>Cantidad:</label>
                             <input type="number" id="cantidad__@item.IdMenu" min="1" max="99" name="cantidad" value="1" required class="form-control" />
-                        <p>
-                            @item.Descripcion
-                        </p>
+                            <label class="control-label">Termino:</label>
+                            <select name="IdTerminoCarne" class="form-control input-rounded" @ViewBag.IdTerminosCarne@item=ViewBag.IdTerminosCarne></select>
+                            
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                             <button type="button" onclick="addOrden(@item.IdMenu, '@item.Nombre','cantidad__@item.IdMenu' , @item.Precio)" class="btn btn-green">Agregar</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -113,6 +118,7 @@
                     <input type="hidden" value='`+ ccantidad +`' name="cantidad[]">
                 </td>
                 <td>`+ producto + `</td>
+                <td>`+ TerminoCrne + `</td>
                 <td>`+ ccantidad + `</td>
                 <td> $`+ precio + `</td>
                 <td>$`+ (ccantidad * precio) + `</td>
@@ -123,6 +129,7 @@
             $("#tr" + id).remove();
 
             $("#detalle").append(detalle);
+            alert("Agregado Exitosamente");
         }
         catch (ex) {
             alert(ex);

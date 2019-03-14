@@ -9,8 +9,8 @@ namespace VLO.Models
     public class TerminosCarne
     {
         [Key]
-        public string IdTerminoCarne { get; set; }
+        public int IdTerminoCarne { get; set; }
         public string Termino { get; set; }
-        public virtual List<Receta> Receta { get; set; }
+        public virtual List<DetallePedido> DetallePedido { get; set; }
     }
 }

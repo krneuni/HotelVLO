@@ -24,10 +24,10 @@ namespace VLO.Models
         [Display(Name = "Contraseña ")]
         public string Password { get; set; }
 
-        //Relaciones
-        //Tabla Empleado para asginar un usuario y contraseña a c/u
-        public int IdEmpleado { get; set; }
-        public virtual Empleado Empleado { get; set; }
+        ////Relaciones
+        ////Tabla Empleado para asginar un usuario y contraseña a c/u
+        //public int IdEmpleado { get; set; }
+        //public virtual Empleado Empleado { get; set; }
 
         //Tabla Roles
         public int IdRol { get; set; }

@@ -74,7 +74,7 @@ namespace VLO.Models
         //Listar la tabla en las siguientes tablas
         public virtual List<HExtras> HExtras { get; set; }
         public virtual List<Pedido> Pedido { get; set; }
-        public virtual List<Usuarios> Usuarios { get; set; }
+        //public virtual List<Usuarios> Usuarios { get; set; }
         public virtual List<Turnos> Turnos { get; set; }
         public virtual List<Prestamos> Prestamos { get; set; }
 

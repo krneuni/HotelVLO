@@ -52,6 +52,7 @@ namespace VLO.Controllers
 
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre");
             ViewBag.IdPedido = new SelectList(Clientes, "IdPedido", "Cliente");
+            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
             return View();
         }
 
@@ -60,7 +61,7 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdDetalle,IdMenu,IdPedido")] DetallePedido detallePedido)
+        public ActionResult Create([Bind(Include = "IdDetalle,IdMenu,IdPedido, cantidad")] DetallePedido detallePedido)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +77,10 @@ namespace VLO.Controllers
                     //Encontrar los productos que se utilizan
                     Productos d = db.Productos.Find(i.IdProducto);
                     //Resta de la cantidad que se pide menos la cantidad utilizada
-                    d.Cantidad = d.Cantidad - i.CantidadUtilizada;
+
+                    var Descuento = i.CantidadUtilizada * detallePedido.cantidad;
+
+                    d.Cantidad = d.Cantidad - Descuento;
                     db.Entry(d).State = EntityState.Modified;
                     db.SaveChanges();
                 }
@@ -86,6 +90,7 @@ namespace VLO.Controllers
 
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre", detallePedido.IdMenu);
             ViewBag.IdPedido = new SelectList(db.Pedido, "IdPedido", "Cliente", detallePedido.IdPedido);
+            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
             return View(detallePedido);
         }
 
@@ -103,6 +108,7 @@ namespace VLO.Controllers
             }
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre", detallePedido.IdMenu);
             ViewBag.IdPedido = new SelectList(db.Pedido, "IdPedido", "Cliente", detallePedido.IdPedido);
+            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
             return View(detallePedido);
         }
 
@@ -111,7 +117,7 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdDetalle,IdMenu,IdPedido")] DetallePedido detallePedido)
+        public ActionResult Edit([Bind(Include = "IdDetalle,IdMenu,IdPedido,cantidad")] DetallePedido detallePedido)
         {
             if (ModelState.IsValid)
             {
@@ -121,6 +127,7 @@ namespace VLO.Controllers
             }
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre", detallePedido.IdMenu);
             ViewBag.IdPedido = new SelectList(db.Pedido, "IdPedido", "Cliente", detallePedido.IdPedido);
+            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
             return View(detallePedido);
         }
 

@@ -21,5 +21,8 @@ namespace VLO.Models
 
         public int cantidad { get; set; }
 
+        public int IdTerminoCarne { get; set; }
+        public virtual TerminosCarne TerminosCarne { get; set; }
+
     }
 }
