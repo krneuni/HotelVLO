@@ -25,8 +25,7 @@ namespace VLO.Controllers
                               IdEmpleado = c.IdEmpleado,
                               Nombre = d.Nombre,
                               HoraInicial = d.HoraInicial,
-                              HoraFinal = d.HoraFinal,
-                              Fecha = d.Fecha
+                              HoraFinal = d.HoraFinal
 
 
                           }).ToList();

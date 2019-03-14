@@ -16,6 +16,7 @@ namespace VLO.Controllers
         // GET: Ordenes
         public ActionResult Index()
         {
+            
             return View(db.Mesa.ToList());
         }
 
@@ -40,6 +41,7 @@ namespace VLO.Controllers
             p.Empleado = e;
             p.Estado = 1;
             p.IdMesa = aovm.mesa;
+            
 
             db.Pedido.Add(p);
             await db.SaveChangesAsync();
@@ -51,7 +53,6 @@ namespace VLO.Controllers
                 dp.IdMenu = aovm.id[i];
                 dp.cantidad = aovm.cantidad[i];
                 dp.IdPedido = lastPedido.IdPedido;
-
                 db.DetallePedido.Add(dp);
                 await db.SaveChangesAsync();
 

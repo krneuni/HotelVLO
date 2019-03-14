@@ -20,9 +20,7 @@ namespace VLO.Models
         public virtual Pedido Pedido { get; set; }
 
         public int cantidad { get; set; }
-
-        public int IdTerminoCarne { get; set; }
-        public virtual TerminosCarne TerminosCarne { get; set; }
+        
 
     }
 }

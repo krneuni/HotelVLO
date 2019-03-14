@@ -25,7 +25,6 @@ namespace VLO.Models
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Genero> Genero { get; set; }
         public DbSet<TipoMenu> TipoMenus { get; set; }
-        public DbSet<TerminosCarne> TerminosCarne { get; set; }
         public DbSet<AsignacionTurno> AsignacionTurno { get; set; }
         public DbSet<Prestamos> Prestamos { get; set; }
     }

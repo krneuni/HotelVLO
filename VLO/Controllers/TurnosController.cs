@@ -46,7 +46,7 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdTurno,Nombre,HoraInicial,HoraFinal,Fecha")] Turnos turnos)
+        public ActionResult Create([Bind(Include = "IdTurno,Nombre,HoraInicial,HoraFinal")] Turnos turnos)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdTurno,Nombre,HoraInicial,HoraFinal,Fecha")] Turnos turnos)
+        public ActionResult Edit([Bind(Include = "IdTurno,Nombre,HoraInicial,HoraFinal")] Turnos turnos)
         {
             if (ModelState.IsValid)
             {

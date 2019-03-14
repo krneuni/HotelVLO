@@ -49,13 +49,13 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdAsignacion,IdTurno,IdEmpleado")] AsignacionTurno asignacionTurno)
+        public ActionResult Create([Bind(Include = "IdAsignacion,IdTurno,Fecha,IdEmpleado")] AsignacionTurno asignacionTurno)
         {
             if (ModelState.IsValid)
             {
                 db.AsignacionTurno.Add(asignacionTurno);
                 db.SaveChanges();
-                return RedirectToAction("Index", "TurnoEmpleado");
+                return RedirectToAction("Index");
             }
 
             ViewBag.IdEmpleado = new SelectList(db.Empleado, "IdEmpleado", "Nombre", asignacionTurno.IdEmpleado);
@@ -85,7 +85,7 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdAsignacion,IdTurno,IdEmpleado")] AsignacionTurno asignacionTurno)
+        public ActionResult Edit([Bind(Include = "IdAsignacion,IdTurno,Fecha,IdEmpleado")] AsignacionTurno asignacionTurno)
         {
             if (ModelState.IsValid)
             {

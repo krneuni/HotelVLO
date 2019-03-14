@@ -15,6 +15,12 @@ namespace VLO.Models
         public int IdTurno { get; set; }
         public virtual Turnos Turnos { get; set; }
 
+
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [Display(Name = "Fecha")]
+        [DataType(DataType.Date)]
+        public string Fecha { get; set; }
+
         public int IdEmpleado { get; set; }
         public virtual Empleado Empleado { get; set; }
     }

@@ -52,7 +52,6 @@ namespace VLO.Controllers
 
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre");
             ViewBag.IdPedido = new SelectList(Clientes, "IdPedido", "Cliente");
-            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
             return View();
         }
 
@@ -90,7 +89,7 @@ namespace VLO.Controllers
 
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre", detallePedido.IdMenu);
             ViewBag.IdPedido = new SelectList(db.Pedido, "IdPedido", "Cliente", detallePedido.IdPedido);
-            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
+            
             return View(detallePedido);
         }
 
@@ -108,7 +107,7 @@ namespace VLO.Controllers
             }
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre", detallePedido.IdMenu);
             ViewBag.IdPedido = new SelectList(db.Pedido, "IdPedido", "Cliente", detallePedido.IdPedido);
-            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
+           
             return View(detallePedido);
         }
 
@@ -127,7 +126,7 @@ namespace VLO.Controllers
             }
             ViewBag.IdMenu = new SelectList(db.Menus, "IdMenu", "Nombre", detallePedido.IdMenu);
             ViewBag.IdPedido = new SelectList(db.Pedido, "IdPedido", "Cliente", detallePedido.IdPedido);
-            ViewBag.IdTerminosCarne = new SelectList(db.TerminosCarne, "IdTerminoCarne", "Termino");
+            
             return View(detallePedido);
         }
 

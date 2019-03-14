@@ -242,7 +242,6 @@
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\RecetasController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Controllers\TerminosCarnesController.cs" />
     <Compile Include="Controllers\TipoMenusController.cs" />
     <Compile Include="Controllers\TurnoEmpleadoController.cs" />
     <Compile Include="Controllers\TurnosController.cs" />
@@ -250,6 +249,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903141717596_InitialCreate.cs" />
+    <Compile Include="Migrations\201903141717596_InitialCreate.Designer.cs">
+      <DependentUpon>201903141717596_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903142022334_FaltaTerminos.cs" />
+    <Compile Include="Migrations\201903142022334_FaltaTerminos.Designer.cs">
+      <DependentUpon>201903142022334_FaltaTerminos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903142048562_Turnos.cs" />
+    <Compile Include="Migrations\201903142048562_Turnos.Designer.cs">
+      <DependentUpon>201903142048562_Turnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddOrdenViewModel.cs" />
     <Compile Include="Models\AsignacionTurno.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -270,7 +282,6 @@
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\Receta.cs" />
     <Compile Include="Models\Roles.cs" />
-    <Compile Include="Models\TerminosCarne.cs" />
     <Compile Include="Models\TipoMenu.cs" />
     <Compile Include="Models\TurnoEmpleado.cs" />
     <Compile Include="Models\Turnos.cs" />
@@ -329,10 +340,6 @@
     <Content Include="Views\Roles\Delete.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
-    <Content Include="Views\AsignacionTurnos\Create.cshtml" />
-    <Content Include="Views\AsignacionTurnos\Delete.cshtml" />
-    <Content Include="Views\AsignacionTurnos\Edit.cshtml" />
-    <Content Include="Views\AsignacionTurnos\Index.cshtml" />
     <Content Include="Views\Mesas\Create.cshtml" />
     <Content Include="Views\Mesas\Delete.cshtml" />
     <Content Include="Views\Mesas\Edit.cshtml" />
@@ -354,10 +361,6 @@
     <Content Include="Views\Productos\Delete.cshtml" />
     <Content Include="Views\Productos\Edit.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
-    <Content Include="Views\Turnos\Create.cshtml" />
-    <Content Include="Views\Turnos\Delete.cshtml" />
-    <Content Include="Views\Turnos\Edit.cshtml" />
-    <Content Include="Views\Turnos\Index.cshtml" />
     <Content Include="Views\TurnoEmpleado\Index.cshtml" />
     <Content Include="Views\Shared\_Menu_Administrador.cshtml" />
     <Content Include="Views\Ordenes\Index.cshtml" />
@@ -365,11 +368,14 @@
     <Content Include="Views\Shared\_Menu_Cocinero.cshtml" />
     <Content Include="Views\Shared\_Menu_Mesero.cshtml" />
     <Content Include="Views\Shared\_Recepcion.cshtml" />
-    <Content Include="Views\TerminosCarnes\Create.cshtml" />
-    <Content Include="Views\TerminosCarnes\Delete.cshtml" />
-    <Content Include="Views\TerminosCarnes\Details.cshtml" />
-    <Content Include="Views\TerminosCarnes\Edit.cshtml" />
-    <Content Include="Views\TerminosCarnes\Index.cshtml" />
+    <Content Include="Views\AsignacionTurnos\Create.cshtml" />
+    <Content Include="Views\AsignacionTurnos\Delete.cshtml" />
+    <Content Include="Views\AsignacionTurnos\Edit.cshtml" />
+    <Content Include="Views\AsignacionTurnos\Index.cshtml" />
+    <Content Include="Views\Turnos\Create.cshtml" />
+    <Content Include="Views\Turnos\Delete.cshtml" />
+    <Content Include="Views\Turnos\Edit.cshtml" />
+    <Content Include="Views\Turnos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -379,6 +385,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903141717596_InitialCreate.resx">
+      <DependentUpon>201903141717596_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903142022334_FaltaTerminos.resx">
+      <DependentUpon>201903142022334_FaltaTerminos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903142048562_Turnos.resx">
+      <DependentUpon>201903142048562_Turnos.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

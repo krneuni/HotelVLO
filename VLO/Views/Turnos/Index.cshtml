@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<VLO.Models.Turnos>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Agregar";
 }
 
-<h2>Turnos</h2>
+<h2>Asignación de turnos</h2>
+
 <p>
     <a href="@Url.Action("Create","Turnos")" class="btn btn-success"> <i class="glyphicon glyphicon-plus"></i> Nuevo</a>
 </p>
@@ -19,9 +20,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.HoraFinal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fecha)
             </th>
             <th></th>
         </tr>
@@ -39,10 +37,7 @@
                     @Html.DisplayFor(modelItem => item.HoraFinal)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Fecha)
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "Edit", new { id = item.IdTurno }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" }) |
+                    @Html.ActionLink(" ", "Edit", new { id = item.IdTurno }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" }) | 
                     @Html.ActionLink(" ", "Delete", new { id = item.IdTurno }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
                 </td>
             </tr>

@@ -27,10 +27,6 @@ namespace VLO.Models
         [DataType(DataType.Time)]
         public string HoraFinal { get; set; }
 
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [Display(Name = "Fecha")]
-        [DataType(DataType.Date)]
-        public string Fecha { get; set; }
 
         //Relaciones 
         public virtual List<AsignacionTurno> AsignacionTurno { get; set; }
