@@ -512,3 +512,4 @@ C:\krn\HotelVLO\VLO\obj\Debug\VLO.Migrations.InitialCreate.resources
 C:\krn\HotelVLO\VLO\obj\Debug\VLO.csproj.GenerateResource.cache
 C:\krn\HotelVLO\VLO\obj\Debug\VLO.Migrations.FaltaTerminos.resources
 C:\krn\HotelVLO\VLO\obj\Debug\VLO.Migrations.Turnos.resources
+C:\krn\HotelVLO\VLO\obj\Debug\VLO.csprojAssemblyReference.cache
