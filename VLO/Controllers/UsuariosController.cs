@@ -48,7 +48,7 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdUser,Username,Password,IdRol")] Usuarios usuarios)
+        public ActionResult Create([Bind(Include = "IdUser,Nombre,Username,Password,IdRol")] Usuarios usuarios)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace VLO.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdUser,Username,Password,IdRol")] Usuarios usuarios)
+        public ActionResult Edit([Bind(Include = "IdUser,Nombre,Username,Password,IdRol")] Usuarios usuarios)
         {
             if (ModelState.IsValid)
             {

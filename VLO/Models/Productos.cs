@@ -13,14 +13,14 @@ namespace VLO.Models
         public int IdProducto { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(75, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(75, ErrorMessage = "No puede ingresar más de 75 caracteres")]
         [Display(Name = "Nombre Producto ")]
         public string Nombre { get; set; }
         
 
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(75, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(75, ErrorMessage = "No puede ingresar más de 75 caracteres")]
         [Display(Name = "Marca")]
         public string Marca { get; set; }
          
@@ -35,8 +35,8 @@ namespace VLO.Models
         public string Fecha { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(500, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(500, ErrorMessage = "No puede ingresar más de 500 caracteres")]
         [DataType(DataType.Text)]
         [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
@@ -47,8 +47,8 @@ namespace VLO.Models
         public double CantidadMinima { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(25, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(25, ErrorMessage = "No puede ingresar más de 25 caracteres")]
         [Display(Name = "Unidad de medida")]
         public string UnidadMedida { get; set; }
         

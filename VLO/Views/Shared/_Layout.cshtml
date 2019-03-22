@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,7 +40,25 @@
     <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
         <div class="nano has-scrollbar">
             <div class="nano-content" tabindex="0" style="right: -12px;">
+
+                @*@if (ViewBag.TipoUsuario == 1)
+                    {*@
                 @Html.Partial("_Menu_Administrador")
+                @*}
+                    else if (ViewBag.TipoUsuario == 2)
+                    {
+                        @Html.Partial("_Recepcion")
+                    }
+                    else if (ViewBag.TipoUsuario == 3)
+                    {
+                        @Html.Partial("_Menu_Mesero")
+                    }
+                    else if (ViewBag.TipoUsuario == 4)
+                    {
+                        @Html.Partial("_Menu_Cocinero")
+
+                    }*@
+
             </div>
             <div class="nano-pane"><div class="nano-slider" style="height: 23px; transform: translate(0px, 0px);"></div></div>
         </div>
@@ -54,7 +72,7 @@
             <div class="logo"><a href="@Url.Action("Index","Ordenes")"><span>Vistas las Olas</span></a></div>
             <div class="hamburger sidebar-toggle">
                 <span class="line"></span>
-        
+
                 <span class="line"></span>
                 <span class="line"></span>
             </div>
@@ -62,7 +80,7 @@
         <div class="pull-right p-r-15">
             <ul>
                 <li class="header-icon dib">
-                   <span class="user-avatar"></span>
+                    @ViewBag.User
                 </li>
             </ul>
         </div>

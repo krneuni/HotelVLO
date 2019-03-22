@@ -13,7 +13,7 @@ namespace VLO.Models
         public int IdRol { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(50, ErrorMessage = "Usuario debe tener al menos {0} caracteres mínimo", MinimumLength = 5)]
+        [StringLength(50, ErrorMessage = "Usuario debe tener al menos 50 caracteres mínimo", MinimumLength = 5)]
         [Display(Name = "Tipo de usuario ")]
         public string Tipo { get; set; }
         

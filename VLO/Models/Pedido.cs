@@ -18,8 +18,8 @@ namespace VLO.Models
         public int Cantidad { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(75, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(75, ErrorMessage = "No puede ingresar más de 75 caracteres")]
         [Display(Name = "Nombre de Cliente")]
         public string Cliente { get; set; }
 

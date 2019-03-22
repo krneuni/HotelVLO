@@ -1,21 +1,21 @@
 ﻿@model VLO.Models.Turnos
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+<h2>Modificar Turno</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Turnos</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.IdTurno)
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IdTurno)
 
+    <div class="col-md-8">
         <div class="form-group">
             @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -23,7 +23,9 @@
                 @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
             </div>
         </div>
+    </div>
 
+    <div class="col-md-8">
         <div class="form-group">
             @Html.LabelFor(model => model.HoraInicial, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -31,7 +33,8 @@
                 @Html.ValidationMessageFor(model => model.HoraInicial, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    </div>
+    <div class="col-md-8">
         <div class="form-group">
             @Html.LabelFor(model => model.HoraFinal, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -39,15 +42,14 @@
                 @Html.ValidationMessageFor(model => model.HoraFinal, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    </div>
+    <div class="col-md-8">
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-info" />
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-default" })
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+    }

@@ -22,6 +22,7 @@
                     <tr>
                         <td>N°</td>
                         <td>Producto</td>
+                        <td>Estado</td>
                         <td>Cantidad</td>
                         <td>Precio</td>
                         <td>Total</td>
@@ -32,8 +33,8 @@
                     
                     </tbody>
             </table>
-
-            <button type="submit" class="btn btn-green">Ordenar</button>
+            <button class="btn btn-danger btn-rounded">Cancelar</button>
+            <button type="submit" class="btn btn-green btn-rounded">Enviar a cocina</button>
 
         </form>
     </div>
@@ -106,7 +107,7 @@
         $(text).show();
     }
 
-    function addOrden(id, producto, cantidad, precio) {
+    function addOrden(id, producto, cantidad, precio, estado) {
         try {
             var ccantidad = parseFloat($("#" + cantidad).val());
             var detalle = `
@@ -116,6 +117,7 @@
                     <input type="hidden" value='`+ ccantidad +`' name="cantidad[]">
                 </td>
                 <td>`+ producto + `</td>
+                <td>`+ estado + `</td>
                 <td>`+ ccantidad + `</td>
                 <td> $`+ precio + `</td>
                 <td>$`+ (ccantidad * precio) + `</td>

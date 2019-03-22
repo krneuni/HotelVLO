@@ -41,7 +41,7 @@ namespace VLO.Models
         public double PrecioTotal { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
         [Display(Name = "Código de Factura")]
         public string Codigo { get; set; }
 

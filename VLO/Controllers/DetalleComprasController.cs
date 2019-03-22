@@ -22,32 +22,32 @@ namespace VLO.Controllers
         }
 
         //[HttpPost]
-        //public ActionResult Index(string rd)
+        //public ActionResult Index(string txtbuscar, string Opciones)
         //{
-            
-        //    if (rd == "1")
+        //    var pro = db.Proveedores.FirstOrDefault();
+        //    var query = from tbl in db.DetalleCompra select tbl;
+        //    //validacion para que la caja no traiga datos vacios
+        //    string formato = txtbuscar.Trim();
+        //    if (formato != "")
         //    {
-        //        var query = from Prod in db.DetalleCompra where Prod.IdProducto select Prod;
-        //    }
-        //    if (rd == "2")
-        //    {
-        //        query = (from nomb in c.Lista() where nomb.Nombre.Contains(txtbuscar) select nomb);
-        //    }
-        //    if (rd == "3")
-        //    {
-        //        query = (from mater in c.Lista() where mater.Materia.Contains(txtbuscar) select mater);
-        //    }
-        //    if (rd == "4")
-        //    {
-        //        double prom = Convert.ToDouble(txtbuscar);
-        //        query = (from proMedio in c.Lista() where proMedio.Promedio == prom select proMedio);
+        //        if (Opciones == "0")
+        //        {
+        //            if (Opciones == "1")
+        //            {
+        //                query = from proveedor in db.DetalleCompra where proveedor.IdProveedor == pro.IdProveedor select proveedor;
+        //            }
+
+        //            if (Opciones == "2")
+        //            {
+        //                query = (from fecha in db.DetalleCompra where fecha.FechaCompra.Contains(txtbuscar) select fecha);
+        //            }
+        //        }
 
         //    }
-        //    return View(query.ToList());
+        //        return View(query.ToList());
         //}
-
-        // GET: DetalleCompras/Details/5
-        public ActionResult Details(int? id)
+            // GET: DetalleCompras/Details/5
+            public ActionResult Details(int? id)
         {
             if (id == null)
             {

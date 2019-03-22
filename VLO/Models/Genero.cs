@@ -12,8 +12,8 @@ namespace VLO.Models
         public int IdGenero { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(15, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3caracteres")]
+        [MaxLength(15, ErrorMessage = "No puede ingresar más de 15 caracteres")]
         [Display(Name = "Genero")]
         public string Nombre { get; set; }
 

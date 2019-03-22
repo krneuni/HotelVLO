@@ -118,7 +118,10 @@
     <Content Include="Content\assets\img\avatar-female2.png" />
     <Content Include="Content\assets\img\avatar-male.png" />
     <Content Include="Content\assets\img\avatar-male2.png" />
+    <Content Include="Content\assets\img\fondo.jpg" />
+    <Content Include="Content\assets\img\FondoLogin.jpg" />
     <Content Include="Content\assets\img\fontLogin.jpg" />
+    <Content Include="Content\assets\img\icono.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\jquery.mCustomScrollbar.css" />
@@ -126,8 +129,9 @@
     <Content Include="Content\css\material-design-iconic-font.min.css" />
     <Content Include="Content\css\normalize.css" />
     <Content Include="Content\css\sweetalert2.css" />
+    <Content Include="Content\estilos.css" />
     <Content Include="Content\icon.png" />
-    <Content Include="Content\LOGO BLANCO PNG.png" />
+    <Content Include="Content\Logo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\theme\one\css\bootstrap.min.css" />
     <Content Include="Content\theme\one\css\font-awesome.min.css" />
@@ -218,6 +222,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -225,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AsignacionTurnosController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\DetalleComprasController.cs" />
@@ -243,7 +249,6 @@
     <Compile Include="Controllers\RecetasController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\TipoMenusController.cs" />
-    <Compile Include="Controllers\TurnoEmpleadoController.cs" />
     <Compile Include="Controllers\TurnosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,6 +266,10 @@
     <Compile Include="Migrations\201903142048562_Turnos.Designer.cs">
       <DependentUpon>201903142048562_Turnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903181444415_Usuarios.cs" />
+    <Compile Include="Migrations\201903181444415_Usuarios.Designer.cs">
+      <DependentUpon>201903181444415_Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AddOrdenViewModel.cs" />
     <Compile Include="Models\AsignacionTurno.cs" />
@@ -269,7 +278,6 @@
     <Compile Include="Models\DetalleCompra.cs" />
     <Compile Include="Models\DetallePedido.cs" />
     <Compile Include="Models\Empleado.cs" />
-    <Compile Include="Models\EmpleadoViewModel.cs" />
     <Compile Include="Models\Factura.cs" />
     <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\HExtras.cs" />
@@ -283,7 +291,6 @@
     <Compile Include="Models\Receta.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\TipoMenu.cs" />
-    <Compile Include="Models\TurnoEmpleado.cs" />
     <Compile Include="Models\Turnos.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -376,6 +383,8 @@
     <Content Include="Views\Turnos\Delete.cshtml" />
     <Content Include="Views\Turnos\Edit.cshtml" />
     <Content Include="Views\Turnos\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Ordenes\Prueba.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -395,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903142048562_Turnos.resx">
       <DependentUpon>201903142048562_Turnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903181444415_Usuarios.resx">
+      <DependentUpon>201903181444415_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

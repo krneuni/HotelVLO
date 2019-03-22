@@ -12,8 +12,8 @@ namespace VLO.Models
         public int IdMenu{ get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(75, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(75, ErrorMessage = "No puede ingresar más de 75 caracteres")]
         [Display(Name = "Nombre Menú ")]
         public string Nombre { get; set; }
 
@@ -23,8 +23,8 @@ namespace VLO.Models
         public double Precio { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(500, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(500, ErrorMessage = "No puede ingresar más de 500 caracteres")]
         [DataType(DataType.Text)]
         [Display(Name = "Descripción")]
         public string Descripcion { get; set; }

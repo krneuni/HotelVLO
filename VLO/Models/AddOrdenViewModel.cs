@@ -12,5 +12,6 @@ namespace VLO.Models
         public int mesa { get; set; }
         public String cliente { get; set; }
         public int numpersonas { get; set; }
+        public int estado { get; set; }
     }
 }

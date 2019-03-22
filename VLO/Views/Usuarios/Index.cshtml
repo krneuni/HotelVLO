@@ -12,6 +12,9 @@
     <table class="table table-bordered" style="background-color:#FFF">
         <tr style="background-color:#E6E6E6">
             <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Roles.Tipo)
             </th>
             <th>
@@ -25,21 +28,25 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Roles.Tipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Username)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Password)
-                </td>
-                <td>
-                    @Html.ActionLink(" ", "Edit", new { id = item.IdUser }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" })
-                    @Html.ActionLink(" ", "Delete", new { id = item.IdUser }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Roles.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink(" ", "Edit", new { id = item.IdUser }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" })
+                @Html.ActionLink(" ", "Delete", new { id = item.IdUser }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+            </td>
+        </tr>
         }
 
     </table>

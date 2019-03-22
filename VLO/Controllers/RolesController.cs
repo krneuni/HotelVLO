@@ -20,6 +20,15 @@ namespace VLO.Controllers
             return View(db.Roles.ToList());
         }
 
+        public void InitSession()
+        {
+            var user = db.Usuarios.FirstOrDefault();
+            ViewBag.NombreUsuario = user.Nombre;
+            var tipo = db.Roles.FirstOrDefault();
+            ViewBag.TipoUsuario = tipo.Tipo;
+            
+        }
+
         // GET: Roles/Details/5
         public ActionResult Details(int? id)
         {

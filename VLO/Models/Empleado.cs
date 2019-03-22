@@ -12,20 +12,20 @@ namespace VLO.Models
         public int IdEmpleado { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(50, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(50, ErrorMessage = "No puede ingresar más de 50 caracteres")]
         [Display(Name = "Nombres ")]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(50, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(50, ErrorMessage = "No puede ingresar más de 50 caracteres")]
         [Display(Name = "Apellidos ")]
         public string Apellido { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(9, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(9, ErrorMessage = "No puede ingresar más de 50 caracteres")]
         [Display(Name = "DUI ")]
         public string Dui { get; set; }
 
@@ -36,14 +36,14 @@ namespace VLO.Models
 
         [Required(ErrorMessage = "Este campo es requerido")]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$",
-                   ErrorMessage="Ingrese un número válido")]
+        [RegularExpression(@"^\(?([0-9]{4})\)?[-. ]?([0-9]{4})$",
+                   ErrorMessage = "Ingrese un número válido")]
         [Display(Name ="Número de teléfono")]
         public string Telefono { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(150, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(150, ErrorMessage = "No puede ingresar más de 150 caracteres")]
         [Display(Name = "Dirección ")]
         public string Direccion { get; set; }
 
@@ -52,8 +52,8 @@ namespace VLO.Models
         public string Mail { get; set; }
 
         [Required(ErrorMessage = "Este campo es requerido")]
-        [MinLength(3, ErrorMessage = "No puede ingresar menos de {0} caracteres")]
-        [MaxLength(10, ErrorMessage = "No puede ingresar más de {0} caracteres")]
+        [MinLength(3, ErrorMessage = "No puede ingresar menos de 3 caracteres")]
+        [MaxLength(10, ErrorMessage = "No puede ingresar más de 10 caracteres")]
         [Display(Name = "Cargo ")]
         public string Cargo { get; set; }
 

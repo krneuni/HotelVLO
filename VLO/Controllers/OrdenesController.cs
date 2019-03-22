@@ -20,6 +20,11 @@ namespace VLO.Controllers
             return View(db.Mesa.ToList());
         }
 
+        public ActionResult Prueba()
+        {
+
+            return View();
+        }
         // GET: Ordenes
         public ActionResult Menu(int? id)
         {
@@ -82,7 +87,7 @@ namespace VLO.Controllers
             db.Entry(d).State = EntityState.Modified;
             db.SaveChanges();
 
-            return Redirect("/Ordenes");
+            return Redirect("Index");
         }
     }
 }

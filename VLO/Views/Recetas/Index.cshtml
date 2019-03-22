@@ -52,6 +52,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CantidadUtilizada)
+                    @Html.DisplayFor(modelItem => item.Productos.UnidadMedida)
                 </td>
                 <td>
                     @Html.ActionLink(" ", "Edit", new { id = item.IdReceta }, new { @class = "btn btn-warning glyphicon glyphicon-refresh" })
