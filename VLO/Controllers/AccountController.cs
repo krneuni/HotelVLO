@@ -44,7 +44,7 @@ namespace VLO.Controllers
                 ViewBag.User = Session["nombre"];
                 Session["tipo"] = Consulta.IdRol;
                 ViewBag.TipoUsuario = Session["tipo"];
-                return RedirectToAction("Prueba", "Ordenes");
+                return RedirectToAction("Ordenes", "Ordenes");
             }
 
             ViewBag.alerta = "vissible";

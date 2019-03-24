@@ -20,11 +20,64 @@ namespace VLO.Controllers
             return View(db.Mesa.ToList());
         }
 
-        public ActionResult Prueba()
+        public ActionResult Ordenes()
         {
+            var orden = db.Pedido.Where(x=>x.Estado==1).ToList();
+            var detalle = db.DetallePedido.ToList();
+            CocinaViewModel cvm = new CocinaViewModel();
+            cvm.pedidos = orden;
+            cvm.detalle = detalle;
+            cvm.menus = db.Menus.ToList();
+            
 
-            return View();
+            //var orden = (from o in db.Pedido join me in db.Mesa on o.IdMesa equals me.IdMesa select o).FirstOrDefault();
+            return View(cvm);
         }
+
+        [HttpGet]
+        public ActionResult TerminarOrdenCocina(int idpedido)
+        {
+            Pedido d = db.Pedido.Find(idpedido);
+            d.Estado = 2;
+            db.Entry(d).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return Redirect("/Ordenes/Ordenes");
+        }
+
+        public ActionResult OrdenesTerminadas()
+        {
+            var orden = db.Pedido.Where(x => x.Estado == 2).ToList();
+            var detalle = db.DetallePedido.ToList();
+            CocinaViewModel cvm = new CocinaViewModel();
+            cvm.pedidos = orden;
+            cvm.detalle = detalle;
+            cvm.menus = db.Menus.ToList();
+            return View(cvm);
+        }
+
+        public ActionResult OrdenesMeseros(int idpedido)
+        {
+            Pedido p = db.Pedido.Find(idpedido);
+            p.Estado = 3;
+            db.Entry(p).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return Redirect("/Ordenes/Pagos");
+        }
+
+        public ActionResult Pagos()
+        {
+            var orden = db.Pedido.ToList();
+            var detalle = db.DetallePedido.ToList();
+            CocinaViewModel cvm = new CocinaViewModel();
+            cvm.pedidos = orden;
+            cvm.detalle = detalle;
+            cvm.menus = db.Menus.ToList();
+            return View(cvm);
+        }
+
+
         // GET: Ordenes
         public ActionResult Menu(int? id)
         {
